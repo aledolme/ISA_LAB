@@ -1,0 +1,57 @@
+Information: Updating design information... (UID-85)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : IIR_1lookahead
+Version: O-2018.06-SP4
+Date   : Thu Nov  4 01:14:16 2021
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+IIR_1lookahead         5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 408.3434 uW   (71%)
+  Net Switching Power  = 163.6520 uW   (29%)
+                         ---------
+Total Dynamic Power    = 571.9954 uW  (100%)
+
+Cell Leakage Power     =  95.2227 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register         278.3077           19.1820        1.4948e+04          312.4378  (  46.83%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    130.0359          144.4702        8.0275e+04          354.7798  (  53.17%)
+--------------------------------------------------------------------------------------------------
+Total            408.3435 uW       163.6522 uW     9.5223e+04 nW       667.2177 uW
+1

@@ -1,0 +1,75 @@
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : IIR_1lookahead
+Version: O-2018.06-SP4
+Date   : Thu Nov  4 01:14:17 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: i_DP/i_REG_DEL_1/Q_reg[6]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: i_DP/i_REG_MUL_C1/Q_reg[3]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  IIR_1lookahead     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_DP/i_REG_DEL_1/Q_reg[6]/CK (DFFR_X1)                  0.00       0.00 r
+  i_DP/i_REG_DEL_1/Q_reg[6]/Q (DFFR_X1)                   0.14       0.14 r
+  i_DP/i_REG_DEL_1/Q[6] (reg_en_rst_n_N10)                0.00       0.14 r
+  i_DP/i_MULTIPLIER_C1/MULTIPLIER_IN_A[6] (MULTIPLIER_NBIT_N10_0)
+                                                          0.00       0.14 r
+  i_DP/i_MULTIPLIER_C1/mult_28/a[6] (MULTIPLIER_NBIT_N10_0_DW_mult_tc_1)
+                                                          0.00       0.14 r
+  i_DP/i_MULTIPLIER_C1/mult_28/U604/ZN (XNOR2_X1)         0.06       0.20 f
+  i_DP/i_MULTIPLIER_C1/mult_28/U447/Z (BUF_X1)            0.05       0.25 f
+  i_DP/i_MULTIPLIER_C1/mult_28/U460/ZN (NAND2_X1)         0.04       0.29 r
+  i_DP/i_MULTIPLIER_C1/mult_28/U457/ZN (OR2_X1)           0.03       0.32 r
+  i_DP/i_MULTIPLIER_C1/mult_28/U459/ZN (NAND2_X1)         0.03       0.35 f
+  i_DP/i_MULTIPLIER_C1/mult_28/U181/CO (FA_X1)            0.10       0.45 f
+  i_DP/i_MULTIPLIER_C1/mult_28/U175/S (FA_X1)             0.13       0.58 r
+  i_DP/i_MULTIPLIER_C1/mult_28/U174/S (FA_X1)             0.12       0.70 f
+  i_DP/i_MULTIPLIER_C1/mult_28/U574/ZN (NAND2_X1)         0.04       0.74 r
+  i_DP/i_MULTIPLIER_C1/mult_28/U640/ZN (OAI21_X1)         0.04       0.78 f
+  i_DP/i_MULTIPLIER_C1/mult_28/U481/ZN (AOI21_X1)         0.07       0.85 r
+  i_DP/i_MULTIPLIER_C1/mult_28/U480/ZN (INV_X1)           0.03       0.88 f
+  i_DP/i_MULTIPLIER_C1/mult_28/U718/ZN (AOI21_X1)         0.05       0.92 r
+  i_DP/i_MULTIPLIER_C1/mult_28/U541/ZN (XNOR2_X1)         0.06       0.98 r
+  i_DP/i_MULTIPLIER_C1/mult_28/product[13] (MULTIPLIER_NBIT_N10_0_DW_mult_tc_1)
+                                                          0.00       0.98 r
+  i_DP/i_MULTIPLIER_C1/MULTIPLIER_OUT_P[13] (MULTIPLIER_NBIT_N10_0)
+                                                          0.00       0.98 r
+  i_DP/i_REG_MUL_C1/D[3] (reg_en_rst_n_N7_3)              0.00       0.98 r
+  i_DP/i_REG_MUL_C1/U10/ZN (NAND2_X1)                     0.03       1.01 f
+  i_DP/i_REG_MUL_C1/U4/ZN (NAND2_X1)                      0.03       1.04 r
+  i_DP/i_REG_MUL_C1/Q_reg[3]/D (DFFR_X2)                  0.01       1.05 r
+  data arrival time                                                  1.05
+
+  clock MY_CLK (rise edge)                                4.60       4.60
+  clock network delay (ideal)                             0.00       4.60
+  clock uncertainty                                      -0.07       4.53
+  i_DP/i_REG_MUL_C1/Q_reg[3]/CK (DFFR_X2)                 0.00       4.53 r
+  library setup time                                     -0.03       4.50
+  data required time                                                 4.50
+  --------------------------------------------------------------------------
+  data required time                                                 4.50
+  data arrival time                                                 -1.05
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.45
+
+
+1
